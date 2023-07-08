@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:8000";
+const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
 const TASKS_URL = `${URL}/api/tasks/`;
 
 export const getTasks = async () => await axios.get(TASKS_URL);

@@ -4,7 +4,7 @@ from bson import ObjectId
 from decouple import config
 
 print(config('MONGO_URI'))
-client = AsyncIOMotorClient('MONGO_URI')
+client = AsyncIOMotorClient(config('MONGO_URI'))
 database = client.taskdatabase
 collection = database.tasks
 
