@@ -1,8 +1,10 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from models import Task
 from bson import ObjectId
+from decouple import config
 
-client = AsyncIOMotorClient('mongodb+srv://ilhuicatziadmin:ilhuicatzi.0.admin@fastapi-app.crykpx3.mongodb.net/?retryWrites=true&w=majority')
+print(config('MONGO_URI'))
+client = AsyncIOMotorClient('MONGO_URI')
 database = client.taskdatabase
 collection = database.tasks
 
